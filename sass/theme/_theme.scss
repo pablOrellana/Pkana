@@ -1,0 +1,479 @@
+// This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
+
+$primary: #995956; // Thats a sample how you could change a BootStrap variable.
+$secondary: #b52816;
+
+$xl: 1440px; 
+$lg: 992px;
+$md: 768px;
+$sm: 576px;
+
+#wrapper-navbar {
+  position: fixed;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1.2rem 0 1.2rem 0;
+  @media(min-width: $lg) {
+    padding: 1.75rem 0 1.75rem 0;
+  }
+  .logo-holder {
+    position: absolute;
+    top:20px;
+    left:40px;
+    img{
+      width: 250px;
+      height: 250px;
+    }
+  }
+  #main-nav {
+    padding: 0px;
+    width: 88%;
+    margin: 0 auto;
+    @media(min-width: $md) {
+      width: 100%;
+    }
+    .sp-menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 100%;
+      height: 100vh;
+      color: #fff;
+      background-color: $primary;
+      padding: 5rem 0 5rem 0;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      z-index: 200;
+      transition: all .5s cubic-bezier(1, 0, 0, 1);
+      @media (min-width: $lg) {
+        position:static;
+        width: auto;
+        height: auto;
+        color: #343332;
+        background: none;
+        padding: 0;
+        display: inline-flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        transition: 0.5s;
+        ul {
+          display: flex;
+          justify-content: space-between;
+        }
+        .page-name {
+          &:first-child {
+            display: none;
+          }
+        }
+      }
+      #navbarNavDropdown {
+        #main-menu,.main-menu--white {
+          display: flex;
+          flex-direction: column;
+          padding-left: 0;
+          margin-bottom: 0;
+          list-style: none;
+          align-items: center;
+          width: 100%;
+          @media (min-width: $lg) {
+            flex-direction: row;
+          }
+          li {
+            margin-bottom: 3.7rem;
+            @media (min-width: $lg) {
+              display: flex;
+              margin-bottom: 0;
+              margin-right: 4rem;
+              position: relative;
+              &:after {
+                content: "";
+                position: absolute;
+                background: #343332;
+                transition: .3s ease;
+                left: 0;
+                bottom: -5px;
+                height: 4px;
+                width: 0%;
+              }
+              &:hover {
+                &:after {
+                  width: 100%;
+                  transition: .4s ease;
+                }
+              }
+            }
+            
+            a {
+              font-weight: bold;
+              text-transform: uppercase;
+              color: #fff;
+              font-size: 2rem;
+              line-height: 1;
+              padding: 0px;
+              @media (min-width: $lg) {
+                font-size: 1.2rem;
+                transition: 0.5s
+              }
+            }
+            &.current_page_item {
+              a {
+                color:#b52816;
+              }
+              &:after {
+                background-color: #b52816;
+              }
+            }
+          }
+          &.main-menu--white{
+            li {
+              &:after{
+                background-color: #fff;
+              }
+              &.current_page_item {
+                &:after {
+                  background-color: #b52816;
+                }
+              }
+            }
+          }
+        }
+      }
+      &.sp-menu--open {
+        right: 0;
+        li{
+          &:nth-child(1) {
+            transform: translate3d(100%, 0, 0);
+            animation: menu 0.5s 0.1s forwards
+          }
+          &:nth-child(2) {
+            transform: translate3d(100%, 0, 0);
+            animation: menu 0.5s 0.2s forwards
+          }
+          &:nth-child(3) {
+            transform: translate3d(100%, 0, 0);
+            animation: menu 0.5s 0.3s forwards
+          }
+          &:nth-child(4) {
+            transform: translate3d(100%, 0, 0);
+            animation: menu 0.5s 0.4s forwards
+          }
+          @keyframes menu {
+            from {
+                opacity: 0;
+                transform: translate3d(30%, 0, 0)
+            }
+        
+            to {
+                opacity: 1;
+                transform: translate3d(0, 0, 0)
+            }
+          }
+        }
+      }
+      .nav-icons {
+        a {
+          color: #fff;
+        }
+      }
+    }
+    .page-name {
+      color: #fff;
+      font-family: 'Merienda', cursive;
+    }
+    .menu-icon {
+      position: relative;
+      display: block;
+      width: 2.5rem;
+      height: 2.4rem;
+      cursor: pointer;
+      float: none;
+      transition: all 0.5s;
+      z-index: 300;
+      @media (min-width: $lg) {
+        display:none;
+      }
+      span {
+        position: absolute;
+        top: 50%;
+        display: block;
+        width: 100%;
+        height: 0.2rem;
+        background-color: #282018;
+        border-radius: 3px;
+        transition: all 0.5s;
+        &:before,&:after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background-color: #282018;
+          border-radius: 0.3rem;
+          transition: all 0.5s;
+        }
+        &:before {
+          transform: translateY(-0.7rem)
+        }
+      
+        &:after {
+          transform: translateY(0.7rem)
+        }
+      }
+      &.menu-icon--white {
+        span {
+          background-color: #fff;
+          &:after {
+              content: "";
+              background-color: #fff;
+          }
+          &:before {
+              content: "";
+              background-color: #fff;
+          }
+        }
+      }
+      &.open {
+        transform: rotate(45deg);
+        span {
+          background-color: #fff;
+          &:before {
+              transform: rotate(90deg);
+              background-color: #fff;
+          }
+          &:after {
+              transform: rotate(90deg);
+              background-color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
+.loader {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background: $primary;
+  z-index: 1000;
+  -webkit-transition: all .5s cubic-bezier(1, 0, 0, 1);
+  transition: all .5s cubic-bezier(1, 0, 0, 1);
+  .loader__wrap {
+    -webkit-transform: scale(0.6);
+    transform: scale(0.6);
+    .loader__logo {
+      width: 50%;
+      margin: auto;
+      img {
+        max-width: 100%;
+        height: auto;
+        vertical-align: middle;
+        width: 100%;
+        margin-bottom: 3.2rem;
+        border-style: none;
+      }
+    }
+    #noTrespassingOuterBarG {
+      height: 19px;
+      width: 156px;
+      border: 1px solid #fff;
+      overflow: hidden;
+      margin: auto;
+      border-radius: 5px;
+      .noTrespassingAnimationG {
+        width: 230px;
+        animation-name: noTrespassingAnimationG;
+        -o-animation-name: noTrespassingAnimationG;
+        -ms-animation-name: noTrespassingAnimationG;
+        -webkit-animation-name: noTrespassingAnimationG;
+        -moz-animation-name: noTrespassingAnimationG;
+        animation-duration: 1.5s;
+        -o-animation-duration: 1.5s;
+        -ms-animation-duration: 1.5s;
+        -webkit-animation-duration: 1.5s;
+        -moz-animation-duration: 1.5s;
+        animation-iteration-count: infinite;
+        -o-animation-iteration-count: infinite;
+        -ms-animation-iteration-count: infinite;
+        -webkit-animation-iteration-count: infinite;
+        -moz-animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        -o-animation-timing-function: linear;
+        -ms-animation-timing-function: linear;
+        -webkit-animation-timing-function: linear;
+        -moz-animation-timing-function: linear;
+        @keyframes noTrespassingAnimationG {
+          0% {
+              transform: translate3d(0, 0, 0)
+          }
+      
+          100% {
+              transform: translate3d(-37px, 0, 0)
+          }
+        }
+        @-o-keyframes noTrespassingAnimationG {
+            0% {
+                transform: translate3d(0, 0, 0)
+            }
+          
+            100% {
+                transform: translate3d(-37px, 0, 0)
+            }
+        }
+        @-ms-keyframes noTrespassingAnimationG {
+            0% {
+                transform: translate3d(0, 0, 0)
+            }
+          
+            100% {
+                transform: translate3d(-37px, 0, 0)
+            }
+        }
+        @-webkit-keyframes noTrespassingAnimationG {
+            0% {
+                transform: translate3d(0, 0, 0)
+            }
+          
+            100% {
+                transform: translate3d(-37px, 0, 0)
+            }
+        }
+        @-moz-keyframes noTrespassingAnimationG {
+            0% {
+                transform: translate3d(0, 0, 0)
+            }
+          
+            100% {
+                transform: translate3d(-37px, 0, 0)
+            }
+        }
+        .noTrespassingBarLineG {
+          background-color: #fff;
+          float: left;
+          width: 14px;
+          height: 117px;
+          margin-right: 23px;
+          margin-top: -27px;
+          -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+        }
+      }
+    }
+  }
+  @media (min-width: $md) {
+    .loader__wrap {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    }
+  }
+  &.js-loader {
+    -webkit-transform: translate3d(0, -100vh, 0);
+    transform: translate3d(0, -100vh, 0);
+  }
+}
+
+.home-banner {
+  overflow: hidden;
+  height: 100vh;
+  position: relative;
+  z-index: -1;
+  .main-visual--top {
+    height: 100vh;
+    background: url('../img/nuts_background_dark.jpg') center no-repeat;
+    background-size: cover;
+    position: relative;
+    margin-bottom: 0;
+    -webkit-transform: scale(1.08);
+    transform: scale(1.08);
+  }
+  .main-visual {
+    width: 100%;
+    height: 100vh;
+  }
+  &.js-home-banner {
+    .over-ray {
+      animation: fade 5s ease forwards;
+    }
+    .reile-logo {
+      animation: logo-fade 2s ease 1s forwards;
+    }
+    .main-visual--top {
+      animation: hero 4s ease forwards;
+    }
+    @media (min-width: $lg) {
+      &:after {
+          width:1024px;
+          left: 0;
+          right: 0;
+          margin: auto;
+      }
+    }
+    @keyframes fade {
+      from {
+          background-color: transparent;
+      }
+  
+      to {
+          background-color: rgba(0,0,0,0.6);
+      }
+    }
+    @keyframes logo-fade {
+      0% {
+          transform: scale(0.9) rotate(4deg)
+      }
+  
+      100% {
+          opacity: 1;
+          transform: scale(1) rotate(0deg);
+          filter: none
+      }
+    }
+    @keyframes hero {
+      from {
+          transform: scale(1.08)
+      }
+  
+      to {
+          transform: scale(1)
+      }
+    }
+  }
+  .over-ray {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .reile-logo {
+      width: 50%;
+      opacity: 0;
+      filter: blur(10px);
+      @media (min-width: $lg) {
+        width:22%;
+      }
+    }
+  }
+  @media (min-width: $md) {
+    .main-visual {
+      height: 60rem;
+    }
+    .main-visual--top {
+      background: url('../img/nuts_background_dark.jpg') center no-repeat;
+      background-size: cover;
+    }
+  }
+}
+
