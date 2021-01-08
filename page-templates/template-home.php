@@ -29,12 +29,12 @@ get_header();
 <!-- Fin sección hero banner -->
 <!-- Sección sobre nosotros -->
 <section class="mt-5 mb-5">
-  <div class="about-us">
+  <div class="about-us"  data-aos="flip-left">
     <div class="container">
       <div class="row">
         <div class="col-lg-5">
-          <div class="extract">
-            <h3>Hola bro</h3>
+          <div class="extract text-lg-right">
+            <h2>Sobre Nosotros</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum eveniet commodi, ratione enim fugiat culpa sapiente pariatur molestias magnam rem cumque. Quam molestiae eligendi nobis mollitia quaerat illum inventore eius voluptatibus maiores tempora sequi pariatur, vero iusto nulla neque. Magnam!</p>
           </div>
         </div>
@@ -50,7 +50,7 @@ get_header();
 <!-- Fin sección sobre nosotros -->
 <!-- Sección que ofrecemos -->
 <section class="mt-5">
-  <div class="what-we-offer">
+  <div class="what-we-offer" data-aos="flip-right">
     <div class="container">
       <div class="row flex-column-reverse flex-lg-row">
         <div class="col-lg-7">
@@ -60,8 +60,13 @@ get_header();
         </div>
         <div class="col-lg-5">
           <div class="extract">
-            <h3>Hola bro</h3>
+            <h2>Que ofrecemos</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum eveniet commodi, ratione enim fugiat culpa sapiente pariatur molestias magnam rem cumque. Quam molestiae eligendi nobis mollitia quaerat illum inventore eius voluptatibus maiores tempora sequi pariatur, vero iusto nulla neque. Magnam!</p>
+          </div>
+          <div class="text-right text-lg-left mb-3 mb-lg-0">
+            <a href="/productos" class="button">
+              Ver Productos
+            </a>
           </div>
         </div>
       </div>
