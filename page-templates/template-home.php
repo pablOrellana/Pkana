@@ -13,23 +13,8 @@ defined( 'ABSPATH' ) || exit;
 get_header();
 ?>
 
-<div class="loader">
-  <div class="loader__wrap">
-    <div class="loader__logo">
-      <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="P'KANA - Frutos secos y más">
-    </div>
-    <div id="noTrespassingOuterBarG">
-      <div id="noTrespassingFrontBarG" class="noTrespassingAnimationG">
-        <div class="noTrespassingBarLineG"></div>
-        <div class="noTrespassingBarLineG"></div>
-        <div class="noTrespassingBarLineG"></div>
-        <div class="noTrespassingBarLineG"></div>
-        <div class="noTrespassingBarLineG"></div>
-        <div class="noTrespassingBarLineG"></div>
-      </div>
-    </div>
-  </div>
-</div>
+
+<!-- Sección hero banner -->
 <section>
   <div class="home-banner">
     <div class="main-visual main-visual--top"></div>
@@ -41,8 +26,49 @@ get_header();
       </div>
   </div>
 </section>
-<section></section>
-<section></section>
+<!-- Fin sección hero banner -->
+<!-- Sección sobre nosotros -->
+<section class="mt-5 mb-5">
+  <div class="about-us">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5">
+          <div class="extract">
+            <h3>Hola bro</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum eveniet commodi, ratione enim fugiat culpa sapiente pariatur molestias magnam rem cumque. Quam molestiae eligendi nobis mollitia quaerat illum inventore eius voluptatibus maiores tempora sequi pariatur, vero iusto nulla neque. Magnam!</p>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="image-holder">
+            <img src="https://picsum.photos/600/400" alt="Sobre Nosotros">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Fin sección sobre nosotros -->
+<!-- Sección que ofrecemos -->
+<section class="mt-5">
+  <div class="what-we-offer">
+    <div class="container">
+      <div class="row flex-column-reverse flex-lg-row">
+        <div class="col-lg-7">
+          <div class="image-holder">
+            <img src="https://picsum.photos/600/400" alt="Sobre Nosotros">
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="extract">
+            <h3>Hola bro</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum eveniet commodi, ratione enim fugiat culpa sapiente pariatur molestias magnam rem cumque. Quam molestiae eligendi nobis mollitia quaerat illum inventore eius voluptatibus maiores tempora sequi pariatur, vero iusto nulla neque. Magnam!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Fin sección que ofrecemos -->
 
 <?php
 get_footer();

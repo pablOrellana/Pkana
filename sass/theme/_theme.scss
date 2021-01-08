@@ -7,14 +7,26 @@ $xl: 1440px;
 $lg: 992px;
 $md: 768px;
 $sm: 576px;
+$xs: 300px;
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
 
 #wrapper-navbar {
   position: fixed;
   width: 100%;
   margin: 0 auto;
   padding: 1.2rem 0 1.2rem 0;
+  background: $primary;
+  // background: #fff;
+  transition: .5s;
+  z-index: 400;
+  &.header--clear {
+    background: transparent;
+  }
   @media(min-width: $lg) {
-    padding: 1.75rem 0 1.75rem 0;
+    padding: 1.3rem 0 1.3rem 0;
   }
   .logo-holder {
     position: absolute;
@@ -69,6 +81,7 @@ $sm: 576px;
         }
       }
       #navbarNavDropdown {
+        display: flex;
         #main-menu,.main-menu--white {
           display: flex;
           flex-direction: column;
@@ -90,7 +103,7 @@ $sm: 576px;
               &:after {
                 content: "";
                 position: absolute;
-                background: #343332;
+                background: #282018;
                 transition: .3s ease;
                 left: 0;
                 bottom: -5px;
@@ -109,31 +122,38 @@ $sm: 576px;
               font-weight: bold;
               text-transform: uppercase;
               color: #fff;
-              font-size: 2rem;
+              font-size: 1.7rem;
               line-height: 1;
               padding: 0px;
               @media (min-width: $lg) {
                 font-size: 1.2rem;
-                transition: 0.5s
+                transition: 0.5s;
+                color: #282018;
               }
             }
-            &.current_page_item {
+            &.active {
               a {
-                color:#b52816;
+                color: $secondary;
               }
               &:after {
-                background-color: #b52816;
+                background-color: $secondary;
               }
             }
           }
           &.main-menu--white{
             li {
+              a {
+                color: #fff;
+              }
               &:after{
                 background-color: #fff;
               }
-              &.current_page_item {
+              &.active {
+                a {
+                  color:$secondary;
+                }
                 &:after {
-                  background-color: #b52816;
+                  background-color: $secondary;
                 }
               }
             }
@@ -143,31 +163,30 @@ $sm: 576px;
       &.sp-menu--open {
         right: 0;
         li{
+          a {
+            color: #fff;
+          }
           &:nth-child(1) {
-            transform: translate3d(100%, 0, 0);
-            animation: menu 0.5s 0.1s forwards
+            transform: translate3d(600px, 0, 0);
+            animation: menu 0.8s 0.1s forwards;
           }
           &:nth-child(2) {
-            transform: translate3d(100%, 0, 0);
-            animation: menu 0.5s 0.2s forwards
+            transform: translate3d(600px, 0, 0);
+            animation: menu 0.8s 0.2s forwards;
           }
           &:nth-child(3) {
-            transform: translate3d(100%, 0, 0);
-            animation: menu 0.5s 0.3s forwards
-          }
-          &:nth-child(4) {
-            transform: translate3d(100%, 0, 0);
-            animation: menu 0.5s 0.4s forwards
+            transform: translate3d(600px, 0, 0);
+            animation: menu 0.8s 0.3s forwards;
           }
           @keyframes menu {
             from {
-                opacity: 0;
-                transform: translate3d(30%, 0, 0)
+              opacity: 0;
+              transform: translate3d(100%, 0, 0);
             }
         
             to {
-                opacity: 1;
-                transform: translate3d(0, 0, 0)
+              opacity: 1;
+              transform: translate3d(0, 0, 0);
             }
           }
         }
@@ -176,11 +195,29 @@ $sm: 576px;
         a {
           color: #fff;
         }
+        @media (min-width: $lg){
+          a {
+            color: #282018;
+          }
+          &.nav-icons--white {
+            a {
+              color: #fff;
+            }
+          }
+        }
+      }
+      .page-name {
+        color: #fff;
       }
     }
     .page-name {
-      color: #fff;
+      color: #282018;
       font-family: 'Merienda', cursive;
+      transition: 0.5s;
+      &.page-name--white {
+        color: #fff;
+        transition: 0.5s;
+      }
     }
     .menu-icon {
       position: relative;
@@ -477,3 +514,60 @@ $sm: 576px;
   }
 }
 
+.about-us, .what-we-offer {
+  @media (min-width: $lg) {
+    margin: 8rem 12rem;
+  }
+  .image-holder {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+#wrapper-footer {
+  background: #282018;
+  color: #fff;
+  .footer {
+    @media (min-width: $lg) {
+      margin: 0 12rem;
+    }
+    .footer-section {
+      .title {
+        font-weight: bold;
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+      .footer-section-item {
+        list-style-type: none;
+        font-size: 0.8rem;
+        text-align: center;
+      }
+      ul {
+        padding-left: 0;
+        .footer-section-item {
+          font-size: 1rem;
+        }
+      }
+    }
+    .embedded-fb {
+      align-self: center;
+      justify-content: center;
+      width: 100%;
+    }
+  }
+}
+.footer-end {
+  font-weight: 300;
+  font-size: 0.8rem;
+  background: #000;
+  color: #fff;
+}
+
+.button {
+  
+  &:hover {
+    background: #b52816;
+    color: #fff;
+  }
+}

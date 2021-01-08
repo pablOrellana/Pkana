@@ -24,15 +24,18 @@ $container = get_theme_mod( 'understrap_container_type' );
   <link rel="apple-touch-icon" href="https://www.pkanashop.com/wp-content/uploads/2020/08/cropped-c4a4ff97-24ac-445d-adf2-c1baef1ff9a6-2-180x180.png">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap" rel="stylesheet">
 	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?> <?php understrap_body_attributes(); ?>>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v9.0" nonce="7AH4SFOP"></script>
 <?php do_action( 'wp_body_open' ); ?>
 <div class="site" id="page">
 
 	<!-- ******************* The Navbar Area ******************* -->
-	<div id="wrapper-navbar">
+	<div id="wrapper-navbar" class="header--clear">
 
 		<a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'understrap' ); ?></a>
 
@@ -44,7 +47,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 			<div class="container">
 
-        <div class="page-name">
+        <div class="page-name page-name--white">
           <h1>P'KANA</h1>
         </div>
         <div class="menu-icon menu-icon--white">
@@ -70,7 +73,7 @@ $container = get_theme_mod( 'understrap_container_type' );
              )
             );
           ?>
-          <div class="nav-icons">
+          <div class="nav-icons nav-icons--white">
             <a href="https://web.facebook.com/Pkana-Frutos-secos-y-m%C3%A1s-104222451580555" target="_blank">
               <i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i>
             </a>
@@ -80,4 +83,21 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 		</nav><!-- .site-navigation -->
 
-	</div><!-- #wrapper-navbar end -->
+  </div><!-- #wrapper-navbar end -->
+  <div class="loader">
+    <div class="loader__wrap">
+      <div class="loader__logo">
+        <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="P'KANA - Frutos secos y más">
+      </div>
+      <div id="noTrespassingOuterBarG">
+        <div id="noTrespassingFrontBarG" class="noTrespassingAnimationG">
+          <div class="noTrespassingBarLineG"></div>
+          <div class="noTrespassingBarLineG"></div>
+          <div class="noTrespassingBarLineG"></div>
+          <div class="noTrespassingBarLineG"></div>
+          <div class="noTrespassingBarLineG"></div>
+          <div class="noTrespassingBarLineG"></div>
+        </div>
+      </div>
+    </div>
+  </div>
