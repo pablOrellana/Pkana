@@ -1,6 +1,7 @@
 // This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
 
-$primary: #995956; // Thats a sample how you could change a BootStrap variable.
+// $primary: #995956;
+$primary: #c9ad79;
 $secondary: #b52816;
 
 $xl: 1440px; 
@@ -592,5 +593,116 @@ a {
     border-radius: 2.25rem;
     box-shadow: 8px 8px 8px 0px rgba(0,0,0,.25);
     transform: translateY(-5px);
+  }
+}
+
+.products{
+  padding-top: 6rem;
+  @media (min-width: $lg) {
+    padding-top: 8rem;
+  }
+  .slider-wrapper {
+    padding: 2rem 2rem;
+    @media (min-width:$lg) {
+      padding: 0;
+    }
+    .splide--ltr {
+      .splide__arrows {
+        .splide__arrow {
+          &:disabled {
+            opacity: 0.3;
+            cursor: auto;
+          }
+          &[disabled] {
+            opacity: 0.3;
+            cursor: auto;
+          }
+        }
+        .splide__arrow--prev {
+          left: -3.5rem;
+          @media (max-width: 1050px) {
+            left: -2.4rem;
+          }
+          @media (max-width: 1050px) {
+            left: -2.4rem;
+          }
+        }
+        .splide__arrow--next {
+          right: -3.5rem;
+          @media (max-width: 1050px) {
+            right: -2.4rem;
+          }
+          @media (max-width: 1050px) {
+            right: -2.4rem;
+          }
+        }
+      }
+      .splide__track {
+        .splide__list{
+          .splide__slide {
+            text-align: center;
+            font-size: 1.25rem;
+            font-weight: 700;
+            transition: 0.2s;
+            cursor: pointer;
+            margin: 0 1.5rem;
+            line-height: 2.5;
+            &:hover {
+              transform: translateY(-15%) scale(1.2);
+              text-shadow: 4px 2px 4px rgba(0,0,0,.3);
+              @media (max-width: 1200px) {
+                transform: translateY(8%) scale(1.1);
+              }
+            }
+            @media (max-width: $lg) {
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  .product-list {
+    margin-bottom: 2rem;
+    @media (min-width: $lg) {
+      margin-top: 2rem;
+    }
+    .product-title {
+      h2 {
+        font-weight: bold;
+      }
+    }
+    .product-items {
+      min-height: 400px;
+      .card {
+        cursor: pointer;
+        transition: 0.2s;
+        .card-body {
+          .card-title {
+            font-size: 1.25rem;
+          }
+          .card-subtitle {
+            font-size: 1rem;
+          }
+          .price-list {
+            list-style-type: none;
+            padding: 0 1rem;
+            margin-bottom: 0;
+          }
+        }
+        &:hover {
+          transform: translateY(-3%);
+          box-shadow: 3px 4px 16px 0px rgba(0,0,0,.20)
+        }
+      }
+    }
+  }
+}
+
+.contact {
+  padding-top: 7rem;
+  @media (min-width: $lg) {
+    padding-top: 8rem;
+    margin-bottom: 3rem;
   }
 }

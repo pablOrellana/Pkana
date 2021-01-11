@@ -20,9 +20,9 @@ get_header();
     <div class="main-visual main-visual--top"></div>
     <div class="over-ray">
         <img class="reile-logo" sizes="(max-width: 1248px) 100vw, 1248px" srcset="
-        <?php echo get_template_directory_uri(); ?>/img/logo.png 375w,
-          <?php echo get_template_directory_uri(); ?>/img/logo.png 884w,
-          <?php echo get_template_directory_uri(); ?>/img/logo.png 1248w" src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="P'KANA">
+        <?php echo get_template_directory_uri(); ?>/img/pkana_logo_fb.jpg 375w,
+          <?php echo get_template_directory_uri(); ?>/img/pkana_logo_fb.jpg 884w,
+          <?php echo get_template_directory_uri(); ?>/img/pkana_logo_fb.jpg 1248w" src="<?php echo get_template_directory_uri(); ?>/img/pkana_logo_fb.jpg" alt="P'KANA">
       </div>
   </div>
 </section>

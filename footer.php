@@ -87,6 +87,24 @@ $container = get_theme_mod( 'understrap_container_type' );
     duration: 1000,
   });
 </script>
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.21/dist/js/splide.min.js"></script>
+<script>
+  new Splide( '.splide', {
+	// type   : 'loop',
+  perPage: 5,
+  autoWidth: true,
+  breakpoints: {
+    576: {
+      perPage: 3,
+    },
+    300: {
+      perPage: 2,
+    },
+  },
+  focus  : 'center',
+  pagination: false,
+} ).mount();
+</script>
 <!-- end Scripts -->
 </body>
 
