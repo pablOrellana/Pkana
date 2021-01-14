@@ -10,6 +10,9 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
+$portada_1 = get_field( 'portada_1' );
+$portada_2 = get_field( 'portada_2' );
+
 get_header();
 ?>
 
@@ -20,9 +23,9 @@ get_header();
     <div class="main-visual main-visual--top"></div>
     <div class="over-ray">
         <img class="reile-logo" sizes="(max-width: 1248px) 100vw, 1248px" srcset="
-        <?php echo get_template_directory_uri(); ?>/img/pkana_logo_fb.jpg 375w,
-          <?php echo get_template_directory_uri(); ?>/img/pkana_logo_fb.jpg 884w,
-          <?php echo get_template_directory_uri(); ?>/img/pkana_logo_fb.jpg 1248w" src="<?php echo get_template_directory_uri(); ?>/img/pkana_logo_fb.jpg" alt="P'KANA">
+        <?php echo get_template_directory_uri(); ?>/img/pkana_logo.png 375w,
+          <?php echo get_template_directory_uri(); ?>/img/pkana_logo.png 884w,
+          <?php echo get_template_directory_uri(); ?>/img/pkana_logo.png 1248w" src="<?php echo get_template_directory_uri(); ?>/img/pkana_logo.png" alt="P'KANA">
       </div>
   </div>
 </section>
@@ -35,12 +38,16 @@ get_header();
         <div class="col-lg-5">
           <div class="extract text-lg-right">
             <h2>Sobre Nosotros</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum eveniet commodi, ratione enim fugiat culpa sapiente pariatur molestias magnam rem cumque. Quam molestiae eligendi nobis mollitia quaerat illum inventore eius voluptatibus maiores tempora sequi pariatur, vero iusto nulla neque. Magnam!</p>
+            <p>
+              <?php the_field( 'descripcion_1' ); ?>
+            </p>
           </div>
         </div>
         <div class="col-lg-7">
           <div class="image-holder">
-            <img src="https://picsum.photos/600/400" alt="Sobre Nosotros">
+          <?php if ( $portada_1 ) : ?>
+	          <img src="<?php echo esc_url( $portada_1['url'] ); ?>" alt="<?php echo esc_attr( $portada_1['alt'] ); ?>" />
+          <?php endif; ?>
           </div>
         </div>
       </div>
@@ -55,13 +62,15 @@ get_header();
       <div class="row flex-column-reverse flex-lg-row">
         <div class="col-lg-7">
           <div class="image-holder">
-            <img src="https://picsum.photos/600/400" alt="Sobre Nosotros">
+          <?php if ( $portada_2 ) : ?>
+	          <img src="<?php echo esc_url( $portada_2['url'] ); ?>" alt="<?php echo esc_attr( $portada_2['alt'] ); ?>" />
+          <?php endif; ?>
           </div>
         </div>
         <div class="col-lg-5">
           <div class="extract">
             <h2>Que ofrecemos</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum eveniet commodi, ratione enim fugiat culpa sapiente pariatur molestias magnam rem cumque. Quam molestiae eligendi nobis mollitia quaerat illum inventore eius voluptatibus maiores tempora sequi pariatur, vero iusto nulla neque. Magnam!</p>
+            <p><?php the_field( 'descripcion_2' ); ?></p>
           </div>
           <div class="text-right text-lg-left mb-3 mb-lg-0">
             <a href="/productos" class="button">

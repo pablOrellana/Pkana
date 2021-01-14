@@ -91,7 +91,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 <script>
   new Splide( '.splide', {
 	// type   : 'loop',
-  perPage: 5,
+  perPage: 6,
   autoWidth: true,
   breakpoints: {
     576: {
@@ -101,7 +101,7 @@ $container = get_theme_mod( 'understrap_container_type' );
       perPage: 2,
     },
   },
-  focus  : 'center',
+  // focus  : 'center',
   pagination: false,
 } ).mount();
 </script>

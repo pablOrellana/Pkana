@@ -104,3 +104,6 @@ $container = get_theme_mod( 'understrap_container_type' );
       </div>
     </div>
   </div>
+  <a class="wsp_icon" href="https://wa.me/51902373367/?text=Hola%20buenas%20tardes%2C%20deseo%20información" target="_blank">
+    <img src="<?php echo get_template_directory_uri(); ?>/img/logo-wasap.png" width="65">
+  </a>
